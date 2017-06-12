@@ -1,0 +1,13 @@
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\RMPGrabber.exe.config
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\RMPGrabber.exe
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\RMPGrabber.pdb
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\obj\Debug\RMPGrabber.csprojResolveAssemblyReference.cache
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\obj\Debug\RMPGrabber.exe
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\obj\Debug\RMPGrabber.pdb
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\HtmlAgilityPack.dll
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\HtmlAgilityPack.pdb
+c:\users\newel\documents\visual studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\HtmlAgilityPack.xml
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\ClassLibrary1.dll
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\HtmlInteractionUtilities.dll
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\HtmlInteractionUtilities.pdb
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\RMPGrabber\bin\Debug\ClassLibrary1.pdb

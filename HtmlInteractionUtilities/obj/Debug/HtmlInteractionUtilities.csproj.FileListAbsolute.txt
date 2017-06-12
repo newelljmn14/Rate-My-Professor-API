@@ -1,0 +1,8 @@
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\bin\Debug\HtmlInteractionUtilities.dll
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\bin\Debug\HtmlInteractionUtilities.pdb
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\bin\Debug\HtmlAgilityPack.dll
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\bin\Debug\HtmlAgilityPack.xml
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\obj\Debug\HtmlInteractionUtilities.csprojResolveAssemblyReference.cache
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\obj\Debug\HtmlInteractionUtilities.dll
+C:\Users\newel\Documents\Visual Studio 2017\Projects\RMPGrabber\HtmlInteractionUtilities\obj\Debug\HtmlInteractionUtilities.pdb

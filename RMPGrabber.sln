@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMPGrabber", "RMPGrabber\RMPGrabber.csproj", "{A07319A0-031D-4013-B9C8-FAC88CD3102F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlInteractionUtilities", "HtmlInteractionUtilities\HtmlInteractionUtilities.csproj", "{127FB5EF-E2A6-4570-A5DE-95EEAF039284}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A07319A0-031D-4013-B9C8-FAC88CD3102F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07319A0-031D-4013-B9C8-FAC88CD3102F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07319A0-031D-4013-B9C8-FAC88CD3102F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07319A0-031D-4013-B9C8-FAC88CD3102F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127FB5EF-E2A6-4570-A5DE-95EEAF039284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127FB5EF-E2A6-4570-A5DE-95EEAF039284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127FB5EF-E2A6-4570-A5DE-95EEAF039284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127FB5EF-E2A6-4570-A5DE-95EEAF039284}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
