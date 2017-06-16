@@ -10,8 +10,7 @@ namespace RMPGrabber
     {
         static void Main(string[] args)
         {
-            var rmpGrabber = new RMPGrabber("rick", "sanchez");
-            Console.WriteLine(rmpGrabber.GetOverallQualityRating());
+            
         }
     }
 }
