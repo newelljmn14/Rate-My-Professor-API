@@ -13,10 +13,10 @@ namespace RMPGrabber
     public class RMPGrabber
     {
         private string _baseUrl = "http://www.ratemyprofessors.com";
-        private string _queryUrl { get; set; }
-        private string _targetProfessorUrl { get; set; }
-        private HtmlNodeCollection _parentNodesOfProfUrl { get; set; }
-        private HtmlNode _rootNode { get; set; }
+        private string _queryUrl;
+        private string _targetProfessorUrl;
+        private HtmlNodeCollection _parentNodesOfProfUrl;
+        private HtmlNode _rootNode;
         public Dictionary<string, string> ProfessorListingUrlByUniversity = new Dictionary<string, string> { };
         public List<string> ProfessorUrls { get; set; }
         public List<string> ProfessorUniversities { get; set; }
@@ -34,7 +34,7 @@ namespace RMPGrabber
             handleMultipleProfessors();
         }
 
-        public double GetOverallQualityRatingOfFirstProfessorInList()
+        public double GetOverallQualityRating()
         {
             string firstProfessorUrlExtension = this._targetProfessorUrl;
             string totalProfessorListingUrl = this._baseUrl + firstProfessorUrlExtension;
@@ -53,7 +53,6 @@ namespace RMPGrabber
             this._parentNodesOfProfUrl = selectProfessorListingNodes(_rootNode);
             this.ProfessorUrls = getProfessorUrlsFromNodes(_parentNodesOfProfUrl);
             this.ProfessorUniversities = getProfessorUniversitiesFromNodes(_parentNodesOfProfUrl);
-
             this.ProfessorListingUrlByUniversity = this.joinUniversityNamesAndProfessorUrlsToDict(this.ProfessorUniversities, this.ProfessorUrls);
         }
 
