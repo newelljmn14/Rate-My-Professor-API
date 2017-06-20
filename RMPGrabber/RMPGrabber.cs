@@ -13,11 +13,8 @@ namespace RMPGrabber
     public class RMPGrabber
     {
         private string _baseUrl = "http://www.ratemyprofessors.com";
-        private string _queryUrl;
         private string _targetProfessorUrl;
-        private HtmlNodeCollection _parentNodesOfProfUrl;
-        private HtmlNode _rootNode;
-        public Dictionary<string, string> ProfessorListingUrlByUniversity = new Dictionary<string, string> { };
+        public Dictionary<string, string> ProfessorListingUrlByUniversity = new Dictionary<string, string>();
         public List<string> ProfessorUrls { get; set; }
         public List<string> ProfessorUniversities { get; set; }
         
@@ -36,23 +33,24 @@ namespace RMPGrabber
 
         public double GetOverallQualityRating()
         {
-            string firstProfessorUrlExtension = this._targetProfessorUrl;
-            string totalProfessorListingUrl = this._baseUrl + firstProfessorUrlExtension;
+            string firstProfessorUrlExtension = _targetProfessorUrl;
+            string totalProfessorListingUrl = _baseUrl + firstProfessorUrlExtension;
 
             var rootNode = Utilities.getRootNodeOfHtmlDocument(totalProfessorListingUrl);
             var parentNode = getParentNodeOfOverallQualityRating(rootNode);
 
             var overallRating = parentNode.ChildNodes[1].InnerHtml;
+
             return Double.Parse(overallRating);
         }
 
         private void setStateOfProfessorUrls(string firstName, string lastName)
         {
-            this._queryUrl = getQueryUrlFromSearchName(firstName, lastName);
-            this._rootNode = Utilities.getRootNodeOfHtmlDocument(_queryUrl);
-            this._parentNodesOfProfUrl = selectProfessorListingNodes(_rootNode);
-            this.ProfessorUrls = getProfessorUrlsFromNodes(_parentNodesOfProfUrl);
-            this.ProfessorUniversities = getProfessorUniversitiesFromNodes(_parentNodesOfProfUrl);
+            var listingHandler = new ProfessorListingHandler(firstName, lastName);
+
+            this.ProfessorUrls = listingHandler.ProfessorUrls;
+            this.ProfessorUniversities = listingHandler.ProfessorUniversities;
+
             this.ProfessorListingUrlByUniversity = this.joinUniversityNamesAndProfessorUrlsToDict(this.ProfessorUniversities, this.ProfessorUrls);
         }
 
@@ -60,36 +58,14 @@ namespace RMPGrabber
         {
             if (this.ProfessorUrls.Count == 1)
             {
-                this._targetProfessorUrl = this.ProfessorUrls[0];
+                _targetProfessorUrl = this.ProfessorUrls[0];
             }
-            else if (this.ProfessorUrls.Count > 1 && this._targetProfessorUrl == null)
+            else if (this.ProfessorUrls.Count > 1 && _targetProfessorUrl == null)
             {
                 throw new Exception("Multiple professors found; narrow your search by entering the university name into the constructor");
             }
         }
 
-        private List<string> getProfessorUrlsFromNodes(HtmlNodeCollection nodes)
-        {
-            var urlList = new List<string> { };
-            foreach (var childNode in nodes)
-            {
-                var grandc = childNode.SelectNodes("a")[0].Attributes;
-                var professorUrl = grandc[0].Value;
-                urlList.Add(professorUrl);
-            }
-            return urlList;
-        }
-
-        private List<string> getProfessorUniversitiesFromNodes(HtmlNodeCollection nodes)
-        {
-            var ProfessorUniversities = new List<string> { };
-            foreach (var childNode in nodes)
-            {
-                var universityName = childNode.ChildNodes[1].ChildNodes[3].ChildNodes[3].InnerHtml;
-                ProfessorUniversities.Add(universityName);
-            }
-            return ProfessorUniversities;
-        }
 
         private void filterProfessorsByUniversity(string universityNameFilter)
         {
@@ -99,15 +75,10 @@ namespace RMPGrabber
                 if (universityName.Contains(universityNameFilter))
                 {
                     universityNameKey = universityName;
-                    this._targetProfessorUrl = ProfessorListingUrlByUniversity[universityNameKey];
+                    _targetProfessorUrl = this.ProfessorListingUrlByUniversity[universityNameKey];
                 }
             }
 
-        }
-
-        private HtmlNodeCollection selectProfessorListingNodes(HtmlNode rootNode)
-        {
-            return rootNode.SelectNodes("//li[@class= 'listing PROFESSOR']");
         }
 
         private HtmlNode getParentNodeOfOverallQualityRating(HtmlNode rootNode)
@@ -125,14 +96,6 @@ namespace RMPGrabber
             }
 
             return professorUrlsByUniversityName;
-        }
-
-        private string getQueryUrlFromSearchName(string firstName, string lastName)
-        {
-            string baseUrl = "http://www.ratemyprofessors.com/search.jsp?query=";
-
-            string queryUrl = baseUrl + firstName + "+" + lastName;
-            return queryUrl;
         }
     }
 }
